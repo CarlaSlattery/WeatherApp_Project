@@ -78,10 +78,19 @@ button.current {
   border: none;
   border-radius: 5%;
   margin-top: 10px;
-
+  float: left;
   padding: 10px;
   color: white;
   background: green;
+}
+
+button.convert {
+  border: none;
+  border-radius: 5%;
+  margin-top: 10px;
+  padding: 10px 15px;
+  color: white;
+  background: grey;
 }
 
 ul.list-group {

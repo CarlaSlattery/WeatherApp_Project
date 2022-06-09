@@ -82,4 +82,40 @@ function showWeather(response) {
   cityTempMax = Math.round(response.data.main.temp.temp_max);
 }
 
-console.log(apiUrl);
+//========================== ICON CHANGE =======================================================//
+
+//=========================== UNIT CONVERSION =================================================//
+
+document
+  .querySelector("#farenheit")
+  .addEventListener("click", convertToFarenheit);
+
+function convertToFarenheit() {
+  let celciusTemp = document.querySelector("#temp".value);
+  console.log(celciusTemp);
+}
+
+//console.log(apiUrl);
+
+//============================== GET CURRENT LOCATION ==============================================//
+
+document
+  .querySelector("#currentLocation")
+  .addEventListener("click", retrievePosition);
+
+//function showLocationWeather() {
+//let apiKey = "51a8ffee2e435fe855f1dad6b24620d1";
+//let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+//axios.get(apiUrl).then(displayWeatherCondition);
+//}
+
+function retrievePosition(position) {
+  let apiKey = "51a8ffee2e435fe855f1dad6b24620d1";
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
+  let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
+  axios.get(url).then(showWeather);
+}
+
+navigator.geolocation.getCurrentPosition(retrievePosition);
+//============================= BACKGROUND CHANGE ==================================================//
