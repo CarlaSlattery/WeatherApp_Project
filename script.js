@@ -72,4 +72,14 @@ function showWeather(response) {
   cityTemperature.innerHTML = Math.round(response.data.main.temp);
   let description = document.querySelector("#description");
   description.innerHTML = response.data.weather[0].description;
+  let windSpeed = document.querySelector("#windSpeed");
+  windSpeed.innerHTML = Math.round(response.data.wind.speed);
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = Math.round(response.data.main.humidity);
+  let cityTempMin = document.querySelector("#tempMin");
+  cityTempMin = Math.round(response.data.main.temp.temp_min);
+  let cityTempMax = document.querySelector("#tempMax");
+  cityTempMax = Math.round(response.data.main.temp.temp_max);
 }
+
+console.log(apiUrl);
