@@ -1,14 +1,29 @@
-* {
-  box-sizing: border-box;
-}
-
 /* ============ MAIN BODY STYLES =================================== */
 
 body {
   margin: 0 auto;
-  background-color: grey;
+  background-color: teal;
 }
 
 h1 {
   font-weight: 700;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+div,
+footer {
+  color: white;
+}
+
+/* ============== FORECAST ======================================= */
+
+div {
+  display: inline;
+  min-height: 200px;
+  min-width: 300px;
+  border: 3px solid white;
 }
