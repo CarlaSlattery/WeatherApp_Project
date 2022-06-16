@@ -22,14 +22,14 @@
     />
    
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles/main.css" />
     <title>Weather App</title>
   </head>
   <body>
     <header>
-    <button class="search" id="searchButton" type="submit" value="submit">Search</button>
-   <form id="search">
-     <input type="search" placeholder="Enter Location" id="cityInput" />
+     <form id="searchEngine">
+    <button class="search btn-btn-primary" id="searchButton" type="submit" value="search">Search</button>
+     <input type="search-city" placeholder="Enter Location" class="form-control" id="cityInput" />
     </form>
     <header>
     <section class="main">
@@ -59,6 +59,6 @@
 
 
 
-    <script type="text/javascript" src="main.js"></script>
+    <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

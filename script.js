@@ -46,19 +46,33 @@ todaysDate.innerHTML = `${day}, ${date} ${month} ${year} at ${hours}:${minutes}`
 
 // =================== WEATHER SEARCH ===========================================//
 
+function searchEngine(city) {
+  let apiKey = "51a8ffee2e435fe855f1dad6b24620d1";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayCurrentTemp);
+}
+
+function getCityRequest(event) {
+  event.preventDefault();
+  let citySearch = document.querySelector("#cityInput");
+  console.log(citySearch.value);
+  searchEngine(citySearch.value);
+}
+
 function displayCurrentTemp(response) {
   console.log(response.data);
   let city = document.querySelector("#placeName");
   let currentTemp = document.querySelector("#currentTemp");
   let weatherDescription = document.querySelector("#weatherDescription");
-  let humidity = document.querySelector("#humidity");
-  let windSpeed = document.querySelector("#windSpeed");
   let iconCurrent = document.querySelector("#currentWeatherIcon");
   city.innerHTML = response.data.name;
   currentTemp.innerHTML = Math.round(response.data.main.temp);
   weatherDescription.innerHTML = response.data.weather[0].description;
+  let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
-  windSpeed.innerHTML = Math.round(response.data.wind.speed);
+  let windSpeed = document.querySelector("#windSpeed");
+  windSpeed.innertext = Math.round(response.data.wind.speed);
   iconCurrent.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
@@ -66,9 +80,7 @@ function displayCurrentTemp(response) {
   iconCurrent.setAttribute("alt", response.data.weather[0].description);
 }
 
-let city = "Stoke";
-let apiKey = "51a8ffee2e435fe855f1dad6b24620d1";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
-console.log(apiUrl);
+searchEngine("stoke");
 
-axios.get(apiUrl).then(displayCurrentTemp);
+let searchCity = document.querySelector("#searchEngine");
+searchCity.addEventListener("submit", getCityRequest);
