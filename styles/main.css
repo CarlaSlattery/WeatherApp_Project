@@ -2,7 +2,11 @@
 
 body {
   margin: 0 auto;
-  background-color: teal;
+  background: linear-gradient(
+    90deg,
+    rgb(126, 233, 236) 0%,
+    rgb(139, 102, 241) 100%
+  );
 }
 
 h1 {
@@ -26,4 +30,8 @@ div {
   min-height: 200px;
   min-width: 300px;
   border: 3px solid white;
+}
+
+.description {
+  text-transform: capitalize;
 }

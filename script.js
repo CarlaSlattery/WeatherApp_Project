@@ -66,13 +66,15 @@ function displayCurrentTemp(response) {
   let currentTemp = document.querySelector("#currentTemp");
   let weatherDescription = document.querySelector("#weatherDescription");
   let iconCurrent = document.querySelector("#currentWeatherIcon");
+
+  celciusTemp = response.data.main.temp;
   city.innerHTML = response.data.name;
-  currentTemp.innerHTML = Math.round(response.data.main.temp);
+  currentTemp.innerHTML = Math.round(celciusTemp);
   weatherDescription.innerHTML = response.data.weather[0].description;
-  let humidity = document.querySelector("#humidity");
-  humidity.innerHTML = response.data.main.humidity;
-  let windSpeed = document.querySelector("#windSpeed");
-  windSpeed.innertext = Math.round(response.data.wind.speed);
+  //let humidity = document.querySelector("#humidity");
+  //humidity.innerHTML = response.data.main.humidity;
+  //let windSpeed = document.querySelector("#windSpeed");
+  //windSpeed.innertext = Math.round(response.data.wind.speed);
   iconCurrent.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
@@ -80,7 +82,29 @@ function displayCurrentTemp(response) {
   iconCurrent.setAttribute("alt", response.data.weather[0].description);
 }
 
-searchEngine("stoke");
-
 let searchCity = document.querySelector("#searchEngine");
 searchCity.addEventListener("submit", getCityRequest);
+
+//=============================== UNIT CONVERSION ============================================//
+
+function convertFarenheit(event) {
+  event.preventDefault();
+  let tempFar = Math.round(celciusTemp * 9) / 5 + 32;
+  let currentTempF = document.querySelector("#currentTemp");
+  currentTempF.innerHTML = tempFar;
+}
+
+let celciusTemp = null;
+
+function convertCelcius(event) {
+  event.preventDefault();
+  let currentTempC = document.querySelector("#currentTemp");
+  currentTempC.innerHTML = Math.round(celciusTemp);
+}
+
+let farenheitLink = document
+  .querySelector("#unitFar")
+  .addEventListener("click", convertFarenheit);
+let celciusLink = document
+  .querySelector("#unitCel")
+  .addEventListener("click", convertCelcius);
