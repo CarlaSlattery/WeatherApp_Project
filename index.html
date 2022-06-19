@@ -20,45 +20,70 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
     />
-   
+<link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/4f8d33b59d.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <link rel="stylesheet" href="styles/main.css" />
     <title>Weather App</title>
   </head>
   <body>
-    <header>
-     <form id="searchEngine">
-    <button class="search btn-btn-primary" id="searchButton" type="submit" value="search">Search</button>
-     <input type="search-city" placeholder="Enter Location" class="form-control" id="cityInput" />
-    </form>
-    <header>
-    <section class="main">
-    <h3 class="date" id="dateTime">08:00 Tuesday 14th June 2022</h3>
-    <h1 id="placeName">Liverpool</h1>
-    <h2 id="currentTemp">12</h2><a href="" id="unitCel">˚C</a><a href="" id="unitFar">˚F</a> 
-    <img src="" id="currentWeatherIcon">
-    <h2 class="description" id="weatherDescription">Rain</h2>
-    <h4>Wind: 5mph</h4>
-    <h4>Humidity: 47%</h4>
+    <section class="content">
+      <header>
+        <form id="searchEngine">
+          <button
+            class="search btn-btn-primary"
+            id="searchButton"
+            type="submit"
+            value="search"
+          >
+            Search
+          </button>
+          <input
+            type="search-city"
+            placeholder="Enter Location"
+            class="form-control"
+            id="cityInput"
+          />
+        </form>
+      </header>
+      <section class="main">
+        <h3 class="date" id="dateTime">
+          <span class="timeDay">08:00 Tuesday</span
+          ><span class="date">14th June 2022</span>
+        </h3>
+        <h1 class="location" id="placeName">Liverpool</h1>
+        <img src="" id="currentWeatherIcon" />
+       
+        <h2 class="currentTemp" id="currentTemp">12</h2>
+         <div class="temp-units">
+        <a href="" class="celcius" id="unitCel">˚C</a><a href="" class="farenheit" id="unitFar">˚F</a>
+        </div>
+        <h2 class="description" id="weatherDescription">Rain</h2>
+        <h4 class="wind">Wind: <span id="windSpeed"></span>mph</h4>
+        <h4 class="humidity">Humidity: <span id="humidity"></span>%</h4>
+      </section>
+      <section class="forecast">
+        <h3>Forecast</h3>
+        <div class="forecastContainer">
+          <div class="dayForecast"><span class="day">Wednesday<span><i class="fa-solid fa-cloud"></i></div>
+          <div class="dayForecast"><span class="day">Thursday</span><i class="fa-solid fa-cloud-sun-rain"></i></div>
+          <div class="dayForecast"><span class="day">Friday</span><i class="fa-solid fa-cloud"></i></div>
+          <div class="dayForecast"><span class="day">Saturday</span><i class="fa-solid fa-sun"></i></div>
+          <div class="dayForecast"><span class="day">Sunday</span><i class="fa-solid fa-sun"></i></div>
+          <div class="dayForecast"><span class="day">Monday</span><i class="fa-solid fa-cloud-sun-rain"></i></div>
+        </div>
+      </section>
+      <footer>
+        <p>By Carla Slattery</p>
+        <p>View code on <a href="">Github</a></p>
+      </footer>
     </section>
-    <section class="forecast">
-    <h3>Forecast</h3>
-      <div class="forecast day">Wednesday</div>
-<div class="forecast">Thursday</div>
-    <div class="forecast">Friday</div>
-    <div class="forecast">Saturday</div>
-    <div class="forecast">Sunday</div>
-    <div class="forecast">Monday</div>
-    </div>
-    </section>
-  <footer>
-  <p>By Carla Slattery</p>
-  <p>View code on <a href="">Github</a>
-  </footer>
-
-
-
-
     <script type="text/javascript" src="script.js"></script>
   </body>
 </html>

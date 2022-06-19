@@ -42,7 +42,7 @@ let months = [
 ];
 let month = months[now.getMonth()];
 
-todaysDate.innerHTML = `${day}, ${date} ${month} ${year} at ${hours}:${minutes}`;
+todaysDate.innerHTML = `${hours}:${minutes} ${day} ${date} ${month} ${year}`;
 
 // =================== WEATHER SEARCH ===========================================//
 
@@ -71,10 +71,10 @@ function displayCurrentTemp(response) {
   city.innerHTML = response.data.name;
   currentTemp.innerHTML = Math.round(celciusTemp);
   weatherDescription.innerHTML = response.data.weather[0].description;
-  //let humidity = document.querySelector("#humidity");
-  //humidity.innerHTML = response.data.main.humidity;
-  //let windSpeed = document.querySelector("#windSpeed");
-  //windSpeed.innertext = Math.round(response.data.wind.speed);
+  let humidity = document.querySelector("#humidity");
+  humidity.innerHTML = response.data.main.humidity;
+  let windSpeed = document.querySelector("#windSpeed");
+  windSpeed.innertext = Math.round(response.data.wind.speed);
   iconCurrent.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`

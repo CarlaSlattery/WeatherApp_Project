@@ -1,37 +1,176 @@
 /* ============ MAIN BODY STYLES =================================== */
 
+* {
+  box-sizing: border-box;
+}
+
+
 body {
+  width: 100%;
+  height: 100vh;
   margin: 0 auto;
-  background: linear-gradient(
-    90deg,
-    rgb(126, 233, 236) 0%,
-    rgb(139, 102, 241) 100%
-  );
-}
-
-h1 {
-  font-weight: 700;
-}
-
-h1,
-h2,
-h3,
-h4,
-p,
-div,
-footer {
+  background: url(../pinksky.jpg);
+  background-size: cover;
+  background-position: center;
   color: white;
+  display: flex;
+  justify-content: center;
 }
 
-/* ============== FORECAST ======================================= */
 
-div {
+.content {
+  background-color: lightslategray;
+  opacity: 0.5;
+  border-radius: 5%;
+  width: 30%;
+  height: 650px;
+  margin-top: 30px;
+  transition: transform, 3000ms, ease;
+  transform: translateZ(0) scale(1.02) perspective (1000px);
+}
+
+content:hover {
+  transform: scale(1.1) perspective(1500px) rotate(10deg);
+}
+
+form {
+  display: inline-block;
+}
+
+
+.main, .forecast {
+  text-align: center;
+}
+
+.date {
+  margin-top: 15px;
+}
+
+img {
+  display: inline-block;
+  height: 100px;
+  width: auto;
+}
+
+
+div.temp-units {
   display: inline;
-  min-height: 200px;
-  min-width: 300px;
-  border: 3px solid white;
+}
+ .celcius, .farenheit{
+  text-decoration: none;
+  color: white;
+  
+}
+
+a:hover {
+text-decoration: underline;
+color: orange;
+}
+
+
+a.celcius {
+  border-right: 2px solid white;
+  padding-right: 10px;
+}
+
+a.farenheit {
+  padding-left: 5px;
 }
 
 .description {
   text-transform: capitalize;
 }
+
+div.dayForecast {
+  display: inline;
+  height: 100px;
+  width: 250px;
+  margin: 15px;
+  padding: 10px, 15px;
+  flex-wrap: wrap;
+  border: 1px, solid, white;
+}
+
+i.fa-solid {
+  display: inline-block;
+  height: 50px;
+  width: auto;
+  align-self: center;
+}
+
+.fa-sun {
+  color: orange;
+}
+
+
+/*body {
+/*  margin: 0;
+/*  width: 100%;
+/*  font-family: sans-serif;
+/*  background: linear-gradient(
+/*    90deg,
+/*    rgb(126, 233, 236) 0%,
+/*    rgb(139, 102, 241) 100%
+/*  );
+/*  align-items: center;
+/*  justify-content: center;
+/*}
+/*
+/*section.main {
+/*  border-radius: 25%;
+/*  /*background: rgba(74, 194, 226, 0.6); */
+/*  height: 500px;
+/*  color: white;
+/*}
+/*
+/*h1 {
+/*  font-weight: 500;
+/*  margin-top: 30px;
+/*  margin-bottom: 50px;
+/*}
+/*
+/*h1,
+/*h2,
+/*h3,
+/*h4,
+/*p,
+/*div,
+/*footer {
+/*  color: white;
+/*}
+/*
+/*
+/*
+/*header {
+/*  display: inline;
+/*}
+/*
+/*button {
+/*  padding: 15px, 20px;
+/*  background: purple;
+/*  color: white;
+/*}
+/*
+/*.form-control {
+/*  display: inlie;
+/*}
+/*
+/*/* ==================== CURRENT WEATHER ==============================*/
+/*
+/*img {
+/*  display: block;
+/*  height: 100px;
+/*  width: 100px;
+/*  margin: 20px;
+/*}
+/*
+/*.description {
+/*  text-transform: capitalize;
+/*}
+/*
+/*/* ============== FORECAST ======================================= */
+/*
+/*.forecastContainer {
+/*  display: flex;
+/*}
+/*
