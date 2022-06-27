@@ -74,7 +74,7 @@ function displayCurrentTemp(response) {
   let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
   let windSpeed = document.querySelector("#windSpeed");
-  windSpeed.innertext = Math.round(response.data.wind.speed);
+  windSpeed.innerHTML = Math.round(response.data.wind.speed);
   iconCurrent.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
