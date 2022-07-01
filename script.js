@@ -75,6 +75,9 @@ function displayCurrentTemp(response) {
   humidity.innerHTML = response.data.main.humidity;
   let windSpeed = document.querySelector("#windSpeed");
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
+  let timezone = document.querySelector("#timezone");
+  timezone.innerHTML = now.setSeconds(now.getSeconds + response.data.timezone);
+
   iconCurrent.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`

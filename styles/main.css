@@ -89,6 +89,7 @@ div.dayForecast {
   padding: 10px, 15px;
   flex-wrap: wrap;
   border: 1px, solid, white;
+  text-align: center;
 }
 
 i.fa-solid {
