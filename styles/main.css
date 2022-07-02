@@ -17,13 +17,18 @@ body {
   justify-content: center;
 }
 
+/* ============== SEARCH BAR STYLING ================================== */
+form {
+  display: inline-block;
+}
+
 
 .content {
   background-color: lightslategray;
   opacity: 0.5;
   border-radius: 5%;
   width: 30%;
-  height: 650px;
+  height: 825px;
   margin-top: 30px;
   transition: transform, 3000ms, ease;
   transform: translateZ(0) scale(1.02) perspective (1000px);
@@ -33,12 +38,9 @@ content:hover {
   transform: scale(1.1) perspective(1500px) rotate(10deg);
 }
 
-form {
-  display: inline-block;
-}
 
 
-.main, .forecast {
+.main {
   text-align: center;
 }
 
@@ -81,19 +83,30 @@ a.farenheit {
   text-transform: capitalize;
 }
 
-div.dayForecast {
-  display: inline;
-  height: 100px;
-  width: 250px;
-  margin: 15px;
-  padding: 10px, 15px;
-  flex-wrap: wrap;
-  border: 1px, solid, white;
+/*================ FORECAST SECTION STYLING ======================================*/
+
+section.forecast {
+ text-align: center;
+
+  
 }
+
+div.dayForecast {
+  border: 2px solid white;
+  border-radius: 5px;
+  margin: 5px;
+
+}
+
+span.day, span.forecast-temp, span.forecast-desc {
+  display: block;
+}
+
+
 
 i.fa-solid {
   display: inline-block;
-  height: 50px;
+  height: auto;
   width: auto;
   align-self: center;
 }
@@ -102,7 +115,24 @@ i.fa-solid {
   color: orange;
 }
 
+/*======================= FOOTER STYLES ========================*/
 
+footer {
+  font-family: monospace;
+  text-align: center;
+}
+
+footer a{
+  color: black;
+}
+
+footer p {
+  display: inline-block;
+}
+
+footer p+p {
+  border: 2px, solid, white;
+}
 /*body {
 /*  margin: 0;
 /*  width: 100%;
@@ -155,7 +185,7 @@ i.fa-solid {
 /*  display: inlie;
 /*}
 /*
-/*/* ==================== CURRENT WEATHER ==============================*/
+/* ==================== CURRENT WEATHER ==============================*/
 /*
 /*img {
 /*  display: block;

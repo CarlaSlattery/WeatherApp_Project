@@ -20,7 +20,7 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
     />
-<link
+    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
     />
@@ -59,29 +59,74 @@
         </h3>
         <h1 class="location" id="placeName">Liverpool</h1>
         <img src="" id="currentWeatherIcon" />
-       
+
         <h2 class="currentTemp" id="currentTemp">12</h2>
-         <div class="temp-units">
-        <a href="" class="celcius" id="unitCel">˚C</a><a href="" class="farenheit" id="unitFar">˚F</a>
+        <div class="temp-units">
+          <a href="" class="celcius" id="unitCel">˚C</a
+          ><a href="" class="farenheit" id="unitFar">˚F</a>
         </div>
         <h2 class="description" id="weatherDescription">Rain</h2>
         <h4 class="wind">Wind: <span id="windSpeed"></span>mph</h4>
         <h4 class="humidity">Humidity: <span id="humidity"></span>%</h4>
       </section>
+
       <section class="forecast">
-        <h3>Forecast</h3>
-        <div class="forecastContainer">
-          <div class="dayForecast"><span class="day">Wednesday<span><i class="fa-solid fa-cloud"></i></div>
-          <div class="dayForecast"><span class="day">Thursday</span><i class="fa-solid fa-cloud-sun-rain"></i></div>
-          <div class="dayForecast"><span class="day">Friday</span><i class="fa-solid fa-cloud"></i></div>
-          <div class="dayForecast"><span class="day">Saturday</span><i class="fa-solid fa-sun"></i></div>
-          <div class="dayForecast"><span class="day">Sunday</span><i class="fa-solid fa-sun"></i></div>
-          <div class="dayForecast"><span class="day">Monday</span><i class="fa-solid fa-cloud-sun-rain"></i></div>
+        <div class="container forecastContainer">
+          <div class="row">
+            <div class="col dayForecast">
+              <span class="day" id="forecastDay">Wednesday</span
+              ><i class="fa-solid fa-cloud"></i>
+              <span class="forecast-temp" id="forecastTempC">10</span
+              ><span class="forecast-desc" id="forecastDesc">Cloudy</span>
+            </div>
+            <div class="col dayForecast">
+              <span class="day" id="forecastDay">Thursday</span
+              ><i class="fa-solid fa-cloud-sun-rain"></i>
+              <span class="forecast-temp" id="forecastTempC">13</span
+              ><span class="forecast-desc" id="forecastDesc"
+                >Scattered Showers</span
+              >
+            </div>
+            <div class="col dayForecast">
+              <span class="day" id="forecastDay">Friday</span
+              ><i class="fa-solid fa-cloud"></i>
+              <span class="forecast-temp" id="forecastTempC">13</span
+              ><span class="forecast-desc" id="forecastDesc">Cloudy</span>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col dayForecast">
+              <span class="day" id="forecastDay">Saturday</span
+              ><i class="fa-solid fa-sun"></i>
+              <span class="forecast-temp" id="forecastTempC">16</span
+              ><span class="forecast-desc" id="forecastDesc">Sun</span>
+            </div>
+            <div class="col dayForecast">
+              <span class="day" id="forecastDay">Sunday</span
+              ><i class="fa-solid fa-sun"></i>
+              <span class="forecast-temp" id="forecastTempC">18</span
+              ><span class="forecast-desc" id="forecastDesc">Sun</span>
+            </div>
+            <div class="col dayForecast">
+              <span class="day" id="forecastDay">Monday</span
+              ><i class="fa-solid fa-cloud-sun-rain"></i>
+              <span class="forecast-temp" id="forecastTempC">16</span
+              ><span class="forecast-desc" id="forecastDesc"
+                >Scattered Showers</span
+              >
+            </div>
+          </div>
         </div>
       </section>
+
       <footer>
         <p>By Carla Slattery</p>
-        <p>View code on <a href="https://github.com/CarlaSlattery/WeatherApp_Project">Github</a></p>
+        <p>
+          View code on
+          <a href="https://github.com/CarlaSlattery/WeatherApp_Project"
+            >Github</a
+          >
+        </p>
       </footer>
     </section>
     <script type="text/javascript" src="script.js"></script>
