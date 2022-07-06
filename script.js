@@ -46,14 +46,6 @@ todaysDate.innerHTML = `${hours}:${minutes} ${day} ${date} ${month} ${year}`;
 
 // =================== WEATHER SEARCH ===========================================//
 
-function getForecast(coordinates) {
-  console.log(coordinates);
-  let apiKey = "51a8ffee2e435fe855f1dad6b24620d1";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
-  axios.get(apiUrl).then(getForecast);
-}
-
 function searchEngine(city) {
   let apiKey = "51a8ffee2e435fe855f1dad6b24620d1";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
@@ -68,12 +60,13 @@ function getCityRequest(event) {
   searchEngine(citySearch.value);
 }
 
-function showForecast() {
+function showForecast(response) {
+  console.log(response.data);
+  // let forecastData = response.data.daily;
   let forecastSection = document.querySelector("#weatherForecast");
-
   let forecastHTML = `<div class="row">`;
-  let days = ["Wed", "Thur", "Fri"];
-  days.forEach(function (day) {
+  let day = ["Thu", "Fri", "Sat"];
+  day.forEach(function (day) {
     forecastHTML =
       forecastHTML +
       `
@@ -89,6 +82,15 @@ function showForecast() {
   forecastSection.innerHTML = forecastHTML;
   console.log(forecastHTML);
 }
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "51a8ffee2e435fe855f1dad6b24620d1";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
+}
+
 function displayCurrentTemp(response) {
   console.log(response.data);
   let city = document.querySelector("#placeName");
@@ -111,7 +113,6 @@ function displayCurrentTemp(response) {
   iconCurrent.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
-  showForecast();
 }
 
 let searchCity = document.querySelector("#searchEngine");
