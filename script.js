@@ -60,26 +60,59 @@ function getCityRequest(event) {
   searchEngine(citySearch.value);
 }
 
+function showForecast(response) {
+  console.log(response.data);
+  // let forecastData = response.data.daily;
+  let forecastSection = document.querySelector("#weatherForecast");
+  let forecastHTML = `<div class="row">`;
+  let day = ["Thu", "Fri", "Sat"];
+  day.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col dayForecast">
+              <span class="day" id="forecastDay">${day}</span
+              ><i class="fa-solid fa-cloud"></i>
+              <span class="forecast-temp" id="forecastTempC">10</span
+              ><span class="forecast-desc" id="forecastDesc">Cloudy</span>
+            </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastSection.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "51a8ffee2e435fe855f1dad6b24620d1";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
+}
+
 function displayCurrentTemp(response) {
   console.log(response.data);
   let city = document.querySelector("#placeName");
   let currentTemp = document.querySelector("#currentTemp");
   let weatherDescription = document.querySelector("#weatherDescription");
   let iconCurrent = document.querySelector("#currentWeatherIcon");
-
+  let humidity = document.querySelector("#humidity");
   celciusTemp = response.data.main.temp;
+  let windSpeed = document.querySelector("#windSpeed");
+
   city.innerHTML = response.data.name;
   currentTemp.innerHTML = Math.round(celciusTemp);
   weatherDescription.innerHTML = response.data.weather[0].description;
-  let humidity = document.querySelector("#humidity");
   humidity.innerHTML = response.data.main.humidity;
-  let windSpeed = document.querySelector("#windSpeed");
   windSpeed.innerHTML = Math.round(response.data.wind.speed);
   iconCurrent.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}.png`
   );
   iconCurrent.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);
 }
 
 let searchCity = document.querySelector("#searchEngine");
