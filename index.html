@@ -35,21 +35,15 @@
   <body>
     <section class="content">
       <header>
-        <form id="searchEngine">
-          <button
-            class="search btn-btn-primary"
-            id="searchButton"
-            type="submit"
-            value="search"
-          >
-            Search
-          </button>
+        <form class="d-flex" role="search" id="searchEngine">
           <input
-            type="search-city"
+            class="form-control me-2"
+            type="text"
             placeholder="Enter Location"
-            class="form-control"
+            aria-label="Search"
             id="cityInput"
           />
+          <button type="submit" id="searchButton" value="Search">Search</button>
         </form>
       </header>
       <section class="main">

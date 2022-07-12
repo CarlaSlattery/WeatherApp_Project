@@ -18,23 +18,25 @@ body {
 }
 
 /* ============== SEARCH BAR STYLING ================================== */
-
-
-.btn-btn-primary{
+button {
   border-radius: 10%;
-  margin-top: 10px;
-  margin-left: 10px;
-  padding-right: 30px;
-  padding-left: 30px;
-  padding-top: 7.5px;
-  padding-bottom: 7.5px;
-  
-  
- 
   background-color: #009688;
   color: white;
-  font-size: 16px;
+margin-top: 15px;
+margin-right: 10px;
 
+
+  
+}
+
+button:hover {
+  background-color: salmon;
+}
+
+input {
+width: 100px;
+  margin-top: 15px;
+  margin-left: 10px;
 }
 
 
