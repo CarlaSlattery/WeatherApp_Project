@@ -60,23 +60,30 @@ function getCityRequest(event) {
   searchEngine(citySearch.value);
 }
 
+//function calcDay(timestamp) {
+//  let updatedDay = new updatedDay(timestamp * 1000);
+//  let weekday = updatedDay.getDay();
+//  let weekdayArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+//  return weekdayArray(weekday);
+//}
+
 function showForecast(response) {
-  console.log(response.data);
+  console.log(response.data.daily);
+  let newForecast = response.data.daily;
   // let forecastData = response.data.daily;
   let forecastSection = document.querySelector("#weatherForecast");
   let forecastHTML = `<div class="row">`;
-  let day = ["Thu", "Fri", "Sat"];
-  day.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+  let forecastImage =
+    //let day = ["Thu", "Fri", "Sat"];
+    newForecast.forEach(function (forecastDay) {
+      forecastHTML += `
             <div class="col dayForecast">
-              <span class="day" id="forecastDay">${day}</span
-              ><i class="fa-solid fa-cloud"></i>
-              <span class="forecast-temp" id="forecastTempC">10</span
-              ><span class="forecast-desc" id="forecastDesc">Cloudy</span>
+              <span class="day" id="forecastDay">${forecastDay.dt}</span>
+             <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" />
+              <span class="forecast-temp" id="forecastTempC">${forecastDay.temp.day}˚</span
+              ><span class="forecast-desc" id="forecastDesc">${forecastDay.weather[0].description}</span>
             </div>`;
-  });
+    });
 
   forecastHTML = forecastHTML + `</div>`;
   forecastSection.innerHTML = forecastHTML;
