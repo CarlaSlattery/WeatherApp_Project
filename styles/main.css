@@ -112,6 +112,7 @@ div.dayForecast {
   border: 2px solid white;
   border-radius: 5px;
   margin: 5px;
+  color: black;
 
 }
 
@@ -137,10 +138,15 @@ i.fa-solid {
 footer {
   font-family: monospace;
   text-align: center;
+  color: black;
 }
 
 footer a{
-  color: black;
+  color: blue;
+}
+
+footer a:hover {
+  color: purple;
 }
 
 footer p {
