@@ -92,7 +92,7 @@ function showForecast(response) {
              }@2x.png" />
               <span class="forecast-temp" id="forecastTempC">${Math.round(
                 forecastDay.temp.day
-              )}˚</span
+              )}˚C</span
               ><span class="forecast-desc" id="forecastDesc">${
                 forecastDay.weather[0].description
               }</span>
@@ -144,9 +144,9 @@ searchCity.addEventListener("submit", getCityRequest);
 
 function convertFarenheit(event) {
   event.preventDefault();
-  let tempFar = Math.round(celciusTemp * 9) / 5 + 32;
+  let tempFar = (celciusTemp * 9) / 5 + 32;
   let currentTempF = document.querySelector("#currentTemp");
-  currentTempF.innerHTML = tempFar;
+  currentTempF.innerHTML = Math.round(tempFar);
 }
 
 let celciusTemp = null;
