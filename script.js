@@ -44,6 +44,17 @@ let month = months[now.getMonth()];
 
 todaysDate.innerHTML = `${hours}:${minutes} ${day} ${date} ${month} ${year}`;
 
+function workOutDay(timestamp) {
+  //console.log(Date.prototype.getDay(forecastDay.dt));
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return daysOfWeek[day];
+
+  //return daysOfWeek(weekday);
+}
+
 // =================== WEATHER SEARCH ===========================================//
 
 function searchEngine(city) {
@@ -60,12 +71,7 @@ function getCityRequest(event) {
   searchEngine(citySearch.value);
 }
 
-//function calcDay(timestamp) {
-//  let updatedDay = new updatedDay(timestamp * 1000);
-//  let weekday = updatedDay.getDay();
-//  let weekdayArray = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-//  return weekdayArray(weekday);
-//}
+console.log(workOutDay);
 
 function showForecast(response) {
   console.log(response.data.daily);
@@ -75,14 +81,23 @@ function showForecast(response) {
   let forecastHTML = `<div class="row">`;
   let forecastImage =
     //let day = ["Thu", "Fri", "Sat"];
-    newForecast.forEach(function (forecastDay) {
-      forecastHTML += `
+    newForecast.forEach(function (forecastDay, index) {
+      if (index < 6) {
+        forecastHTML += `
             <div class="col dayForecast">
-              <span class="day" id="forecastDay">${forecastDay.dt}</span>
-             <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" />
-              <span class="forecast-temp" id="forecastTempC">${forecastDay.temp.day}˚</span
-              ><span class="forecast-desc" id="forecastDesc">${forecastDay.weather[0].description}</span>
+              <span class="day" id="forecastDay">${workOutDay(forecastDay.dt)}
+            </span>
+             <img src="http://openweathermap.org/img/wn/${
+               forecastDay.weather[0].icon
+             }@2x.png" />
+              <span class="forecast-temp" id="forecastTempC">${Math.round(
+                forecastDay.temp.day
+              )}˚</span
+              ><span class="forecast-desc" id="forecastDesc">${
+                forecastDay.weather[0].description
+              }</span>
             </div>`;
+      }
     });
 
   forecastHTML = forecastHTML + `</div>`;
