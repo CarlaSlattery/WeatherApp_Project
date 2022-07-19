@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   width: 100%;
   height: 100vh;
@@ -19,8 +18,7 @@ body {
 
 /* ============== SEARCH BAR STYLING ================================== */
 
-
-.btn-btn-primary{
+.btn-btn-primary {
   border-radius: 10%;
   margin-top: 10px;
   margin-left: 10px;
@@ -28,22 +26,18 @@ body {
   padding-left: 30px;
   padding-top: 7.5px;
   padding-bottom: 7.5px;
-  
-  
- 
+
   background-color: #009688;
   color: white;
   font-size: 16px;
-
 }
-
 
 .content {
   background-color: lightslategray;
-  opacity: 0.5;
+  opacity: 0.6;
   border-radius: 5%;
   width: 30%;
-  height: 825px;
+  height: fit-content;
   margin-top: 30px;
   transition: transform, 3000ms, ease;
   transform: translateZ(0) scale(1.02) perspective (1000px);
@@ -52,8 +46,6 @@ body {
 content:hover {
   transform: scale(1.1) perspective(1500px) rotate(10deg);
 }
-
-
 
 .main {
   text-align: center;
@@ -69,21 +61,19 @@ img {
   width: auto;
 }
 
-
 div.temp-units {
   display: inline;
 }
- .celcius, .farenheit{
+.celcius,
+.farenheit {
   text-decoration: none;
   color: white;
-  
 }
 
 a:hover {
-text-decoration: underline;
-color: orange;
+  text-decoration: underline;
+  color: orange;
 }
-
 
 a.celcius {
   border-right: 2px solid white;
@@ -101,23 +91,21 @@ a.farenheit {
 /*================ FORECAST SECTION STYLING ======================================*/
 
 section.forecast {
- text-align: center;
-
-  
+  text-align: center;
 }
 
 div.dayForecast {
   border: 2px solid white;
   border-radius: 5px;
   margin: 5px;
-
+  color: black;
 }
 
-span.day, span.forecast-temp, span.forecast-desc {
+span.day,
+span.forecast-temp,
+span.forecast-desc {
   display: block;
 }
-
-
 
 i.fa-solid {
   display: inline-block;
@@ -137,7 +125,7 @@ footer {
   text-align: center;
 }
 
-footer a{
+footer a {
   color: black;
 }
 
@@ -145,77 +133,6 @@ footer p {
   display: inline-block;
 }
 
-footer p+p {
+footer p + p {
   border: 2px, solid, white;
 }
-/*body {
-/*  margin: 0;
-/*  width: 100%;
-/*  font-family: sans-serif;
-/*  background: linear-gradient(
-/*    90deg,
-/*    rgb(126, 233, 236) 0%,
-/*    rgb(139, 102, 241) 100%
-/*  );
-/*  align-items: center;
-/*  justify-content: center;
-/*}
-/*
-/*section.main {
-/*  border-radius: 25%;
-/*  /*background: rgba(74, 194, 226, 0.6); */
-/*  height: 500px;
-/*  color: white;
-/*}
-/*
-/*h1 {
-/*  font-weight: 500;
-/*  margin-top: 30px;
-/*  margin-bottom: 50px;
-/*}
-/*
-/*h1,
-/*h2,
-/*h3,
-/*h4,
-/*p,
-/*div,
-/*footer {
-/*  color: white;
-/*}
-/*
-/*
-/*
-/*header {
-/*  display: inline;
-/*}
-/*
-/*button {
-/*  padding: 15px, 20px;
-/*  background: purple;
-/*  color: white;
-/*}
-/*
-/*.form-control {
-/*  display: inlie;
-/*}
-/*
-/* ==================== CURRENT WEATHER ==============================*/
-/*
-/*img {
-/*  display: block;
-/*  height: 100px;
-/*  width: 100px;
-/*  margin: 20px;
-/*}
-/*
-/*.description {
-/*  text-transform: capitalize;
-/*}
-/*
-/* ============== FORECAST ======================================= */
-/*
-/*.forecastContainer {
-/*  display: flex;
-/*}
-/*
